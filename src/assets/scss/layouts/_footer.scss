@@ -1,0 +1,43 @@
+.footer {
+  background-color: #fff;
+  color: var(--gray-text);
+
+  &__box {
+    width: 1174px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__copyright,
+  &__menu-item {
+    margin-right: 2em;
+  }
+
+  &__menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__support {
+    color: var(--blue);
+  }
+
+  &__support-icon {
+    background: url(../img/icons/mail.svg) no-repeat center;
+    background-size: contain;
+    display: block;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 1em 0 2px;
+  }
+}
