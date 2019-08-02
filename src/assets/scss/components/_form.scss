@@ -26,6 +26,24 @@
     width: 100%;
     padding: 10px 0;
     outline: none;
+
+    &_fill {
+      border-color: var(--green); 
+    }
+
+    &_error {
+      border-color: var(--red);
+    }
+  }
+
+  &__error {
+    color: var(--red);
+    display: flex;
+    font-size: 12px;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    padding: 8px 0px;
   }
 
   &__visibility-btn {
@@ -36,7 +54,7 @@
     height: 18px;
     position: absolute;
     top: 50%;
-    right: 1em;
+    right: .5em;
     transform: translateY(-50%);
 
     &_show {

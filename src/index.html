@@ -31,21 +31,39 @@
             <h1 class="h1 form__heading">Войти в личный кабинет</h1>
             <label class="form__label">
               <input
+                v-model="login"
                 class="form__input"
+                :class="loginClass"
                 type="text"
                 name="login"
                 placeholder="Логин"
                 required
               >
+              <small
+                v-if="error[0]"
+                class="form__error"
+              >
+                <span>{{ error[0] }}</span>
+                Ошибка
+              </small>
             </label>
             <label class="form__label">
               <input
+                v-model="password"
                 :type="type"
+                :class="passwordClass"
                 class="form__input"
                 name="password"
                 placeholder="Пароль"
                 required
               >
+              <small
+                v-if="error[1]"
+                class="form__error"
+              >
+              <span>{{ error[1] }}</span>
+              Ошибка
+            </small>
               <button
                 :class="{ 'form__visibility-btn_show': type === 'text' }"
                 class="form__visibility-btn"
