@@ -5,6 +5,8 @@
         './base/type';
 
 @import './layouts/app',
+        './layouts/container',
+        './layouts/header',
         './layouts/footer';
 
 @import './components/logo',

@@ -1,0 +1,57 @@
+.header {
+  background: #fff;
+
+  &__box {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 110px;
+    display: block;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__add-file {
+    margin-left: auto;
+    margin-right: 24px;
+    color: var(--green);
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    padding: 9px 20px 9px 38px;
+    background: url(../img/icons/plus.svg) no-repeat;
+    background-position: 13px 11px;
+    background-size: 12px;
+    font-size: 14px;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+
+    &:hover &-arrow,
+    &:focus &-arrow {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__profile-arrow {
+    display: block;
+    background: url(../img/icons/arrow.svg) no-repeat center;
+    background-size: contain;
+    width: 10px;
+    height: 7px;
+    transition: .2s transform;
+  }
+
+  &__profile-photo {
+    display: block;
+    height: 40px;
+    width: 40px;
+    margin-right: 8px;
+  }
+}
