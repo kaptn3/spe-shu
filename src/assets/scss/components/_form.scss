@@ -15,6 +15,8 @@
     display: block;
     width: 100%;
     cursor: pointer;
+    position: relative;
+    margin-bottom: 40px;
   }
 
   &__input {
@@ -24,7 +26,22 @@
     width: 100%;
     padding: 10px 0;
     outline: none;
-    margin-bottom: 40px;
+  }
+
+  &__visibility-btn {
+    display: block;
+    background: transparent url(../img/icons/hide.svg) no-repeat center;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+
+    &_show {
+      background-image: url(../img/icons/show.svg);
+    }
   }
 
   &__btn {

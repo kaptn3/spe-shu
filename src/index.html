@@ -40,14 +40,23 @@
             </label>
             <label class="form__label">
               <input
+                :type="type"
                 class="form__input"
-                type="password"
                 name="password"
                 placeholder="Пароль"
                 required
               >
+              <button
+                :class="{ 'form__visibility-btn_show': type === 'text' }"
+                class="form__visibility-btn"
+                type="button"
+                @click="toggleShow"
+              ></button>
             </label>
-            <button class="button form__btn">Войти</button>
+            <button
+              class="button form__btn"
+              type="submit"
+            >Войти</button>
             <small class="form__no-account">
               У вас нет аккаунта? <a href="#">Зарегистрироваться</a>
             </small>
@@ -91,5 +100,7 @@
       </div>
     </footer>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="assets/js/form.js"></script>
 </body>
 </html>
