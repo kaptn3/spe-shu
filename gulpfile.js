@@ -7,6 +7,7 @@ const del = require('del'),
       cssnano = require('cssnano'),
       sourcemaps = require('gulp-sourcemaps'),
       babel = require('gulp-babel'),
+      pug = require('gulp-pug'),
       browserSync = require('browser-sync').create();
 
 const paths = {
@@ -25,6 +26,10 @@ const paths = {
   },
   html: {
     src: 'src/*.html',
+    dest: 'dist'
+  },
+  pug: {
+    src: 'src/views/**/*.pug',
     dest: 'dist'
   }
 };
@@ -60,15 +65,25 @@ function img() {
   .pipe(dest(paths.img.dest));
 }
 
+function toPug() {
+  return src(paths.pug.src)
+  .pipe(pug({
+    pretty: true
+  }))
+  .pipe(dest(paths.pug.dest));
+}
+
 exports.clean = clean;
 exports.css = css;
 exports.javascript = javascript;
 exports.html = html;
 exports.img = img;
+exports.toPug = toPug;
 
-exports.build = series(clean, html, img, css, javascript);
+exports.build = series(clean, html, img, css, javascript, toPug);
 
 exports.default = function() {
   watch('src/assets/scss/**/*.scss', css);
-  watch('src/assets/js/*.js', series(clean, html, img, css, javascript));
+  watch('src/views/**/*.pug', toPug);
+  watch('src/assets/js/*.js', series(clean, img, javascript));
 };

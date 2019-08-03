@@ -9,8 +9,9 @@
   "author": "kaptn",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
-    "browser-sync": "^2.26.7"
+    "gulp-pug": "^4.0.1"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",

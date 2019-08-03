@@ -1,0 +1,13 @@
+include includes/head.pug
+
+body
+  .app
+    .app__main
+      header
+        a.logo(href='/')
+          img(src='assets/img/logotype.svg', alt='SpeShu logotype')
+      main
+        include includes/form.pug
+    include includes/footer.pug
+  include includes/vue.pug
+  script(src="assets/js/form.js")

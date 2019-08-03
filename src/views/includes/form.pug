@@ -1,0 +1,18 @@
+form.form(v-cloak)
+  .form__box
+    h1.h1.form__heading Войти в личный кабинет
+    label.form__label
+      input.form__input(v-model="login", :class="loginClass", type="text", name="login", placeholder="Логин", required="")
+      small.form__error(v-if="error[0]")
+        span {{ error[0] }}
+        | Ошибка
+    label.form__label
+      input.form__input(v-model="password", :type="type", :class="passwordClass", name="password", placeholder="Пароль", required="")
+      small.form__error(v-if="error[1]")
+        span {{ error[1] }}
+        | Ошибка
+      button.form__visibility-btn(:class="{ 'form__visibility-btn_show': type === 'text' }", type="button", @click="toggleShow")
+    button.button.form__btn(type="submit") Войти
+    small.form__no-account У вас нет аккаунта? 
+      a(href="#") Зарегистрироваться
+  a.form__forget(href="#") Забыли пароль?
