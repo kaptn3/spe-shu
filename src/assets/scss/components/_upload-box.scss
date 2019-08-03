@@ -1,0 +1,13 @@
+.upload-box {
+  text-align: center;
+
+  &__image {
+    margin-bottom: 28px;
+  }
+
+  &__text {
+    margin-bottom: 28px;
+    color: var(--gray-text);
+    display: block;
+  }
+}

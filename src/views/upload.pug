@@ -4,16 +4,8 @@ body
   .app
     include includes/header.pug
     main.container.app__box.upload__main
-      form.upload-form
-        h1.h1.upload-form__heading Перетащите файл в выделенную область или кликнете 
-          span.upload-form__upload загрузить файл
-            input.upload-form__input-file(type="file")
-        .upload-area
-          i.upload-area__icon
-          span.upload-area__hint Выберите Excel файл
-          .upload-area__btn
-            button.button(type="button") Загрузить файл с компьютера
-            input.upload-area__input-file(type="file")
+      include includes/upload-form.pug
+      include includes/upload-loading.pug
     include includes/footer.pug
   include includes/vue.pug
   script(src="/assets/js/upload.js")

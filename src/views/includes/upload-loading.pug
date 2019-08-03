@@ -1,0 +1,9 @@
+.upload-box(v-if="status !== 'waiting'", v-cloak)
+  div(v-if="status === 'loading'")
+    img.upload-box__image(src="/assets/img/loading.svg", alt="Loading image")
+    span.upload-box__text Загрузка файла на сервер
+
+  div(v-if="status === 'collect'", v-cloak)
+    img.upload-box__image(src="/assets/img/collecting.svg", alt="Collecting image")
+    span.upload-box__text Собираем данные о товарах из файла
+  i.loading
