@@ -4,11 +4,13 @@
         './base/fonts',
         './base/type';
 
-@import './layouts/app',
-        './layouts/container',
+@import './layouts/container',
+        './layouts/app',
         './layouts/header',
         './layouts/footer';
 
 @import './components/logo',
         './components/form',
-        './components/button';
+        './components/button',
+        './components/upload-form',
+        './components/upload-area';
