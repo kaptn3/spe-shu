@@ -1,54 +1,49 @@
-.table-box
+.table-box.table-processing
   table.table
     thead.table__thead
       tr.table__row
-        th.table__check
-          label.check
-            input.check__input(type="checkbox", name="docs")
-            span.check__box
         th.table__link Ссылка
-        th.table__price Цена
         th.table__cashback Кэшбэк
         th.table__percent Процент
         th.table__coupon Купон
         th.table__term Срок действия
         th.table__status Статус
-        th.table__reload
-          button.table__reload-btn.table__thead-reload
     tbody
-      - for (var x = 0; x < 8; x++)
+      - for (var x = 0; x < 3; x++)
         tr.table__row
-          td 
-            label.check
-              input.check__input(type="checkbox", name="doc")
-              span.check__box
           td
             a(href="https://google.com") https://docs.google.com...
-          td 234 $
           td 
             span.table__cashback_yes Да
           td 1% / 5$
-          td 20
+          td
+            span.table__empty —
           td До 30 июля 
             span.table__term-days (1 день)
           td
             span.table__status_done Обработан
-          td
       tr.table__row
-        td 
-          label.check
-            input.check__input(type="checkbox", name="doc")
-            span.check__box
         td
           a(href="https://google.com") https://docs.google.com...
-        td 234 $
         td 
-          span.table__cashback_no Да
+          span.table__empty . . .
         td 1% / 5$
         td 20
         td До 30 июля 
           span.table__term-days (1 день)
         td
           span.table__status_error Ошибка
-        td
-          button.table__reload-btn
+      - for (var x = 0; x < 3; x++)
+        tr.table__row
+          td
+            a(href="https://google.com") https://docs.google.com...
+          td 
+            span.table__cashback_no Нет
+          td
+            span.table__empty . . .
+          td
+            span.table__empty . . .
+          td
+            span.table__empty . . .
+          td
+            span.table__status_waiting Обработка

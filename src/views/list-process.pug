@@ -1,0 +1,16 @@
+include includes/head.pug
+
+body
+  .app
+    include includes/header.pug
+    .container.app__main
+      .process-top
+        span.h1 Найдено ссылок: 
+          span.process-top__count 145
+        span.process-top__percent Обработано 60%
+        button.process-top__btn
+          i.process-top__btn-icon
+          | Перезапустить обработку
+      include includes/table-processing.pug
+      i.loading
+    include includes/footer.pug

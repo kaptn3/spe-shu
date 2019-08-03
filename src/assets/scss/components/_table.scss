@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.table-processing {
+  margin-bottom: 20px;
+}
+
 .table {
   font-size: 14px;
   background-color: #fff;
@@ -92,10 +96,18 @@
 
   &__coupon {
     width: 137px;
+
+    &_no {
+      color: var(--red);
+    }
   }
 
   &__term {
     width: 193px;
+  }
+
+  &__term-days {
+    color: var(--gray-text);
   }
 
   &__status {
@@ -111,8 +123,14 @@
       background-color: #f8d1d1;
     }
 
+    &_waiting {
+      color: var(--blue);
+      background-color: #e5d3fc;
+    }
+
     &_done,
-    &_error {
+    &_error,
+    &_waiting {
       width: 100%;
       display: block;
       border-radius: 100px;
@@ -131,5 +149,9 @@
     display: block;
     background: url(/assets/img/icons/reload.svg) no-repeat center;
     background-size: contain;
+  }
+
+  &__empty {
+    color: #757575;
   }
 }
