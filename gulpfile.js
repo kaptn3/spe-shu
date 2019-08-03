@@ -45,8 +45,7 @@ function css() {
     .on('error', sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
-    .pipe(dest(paths.css.dest))
-    .pipe(browserSync.stream());
+    .pipe(dest(paths.css.dest));
 }
 
 function javascript() {
@@ -55,17 +54,12 @@ function javascript() {
   .pipe(dest(paths.js.dest));
 }
 
-function html() {
-  return src(paths.html.src)
-  .pipe(dest(paths.html.dest));
-}
-
 function img() {
   return src(paths.img.src)
   .pipe(dest(paths.img.dest));
 }
 
-function toPug() {
+function html() {
   return src(paths.pug.src)
   .pipe(pug({
     pretty: true
@@ -73,17 +67,21 @@ function toPug() {
   .pipe(dest(paths.pug.dest));
 }
 
+function watcher() {
+  watch('src/assets/scss/**/*.scss', css);
+  watch('src/assets/js/*.js', javascript);
+  watch('src/views/**/*.pug', html);
+  watch('src/img/**/*', img);
+};
+
 exports.clean = clean;
 exports.css = css;
 exports.javascript = javascript;
-exports.html = html;
 exports.img = img;
-exports.toPug = toPug;
+exports.html = html;
 
-exports.build = series(clean, html, img, css, javascript, toPug);
+exports.watcher = watcher;
 
-exports.default = function() {
-  watch('src/assets/scss/**/*.scss', css);
-  watch('src/views/**/*.pug', toPug);
-  watch('src/assets/js/*.js', series(clean, img, javascript));
-};
+exports.build = series(clean, img, css, javascript, html);
+
+exports.default = series(watcher);
