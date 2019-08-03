@@ -1,0 +1,17 @@
+.loading {
+  display: block;
+  width: 56px;
+  height: 56px;
+  background: url(../img/icons/loading.svg) no-repeat center;
+  background-size: contain;
+  animation: 1s round linear infinite;
+}
+
+@keyframes round {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
