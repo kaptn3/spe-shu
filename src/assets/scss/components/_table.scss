@@ -1,9 +1,18 @@
+.table-box {
+  overflow-y: auto;
+}
+
 .table {
   font-size: 14px;
   background-color: #fff;
   border-collapse: collapse;
   border-radius: 8px;
+  min-width: 1028px;
   width: 100%;
+
+  a {
+    color: var(--blue);
+  }
 
   &__thead {
     color: var(--gray-text);
@@ -56,6 +65,24 @@
 
   &__cashback {
     width: 147px;
+
+    &_yes {
+      color: var(--green);
+
+      &::after {
+        content: '';
+        display: inline-block;
+        background: url(/assets/img/icons/check-mark.svg) center no-repeat;
+        background-size: contain;
+        width: 12px;
+        height: 9px;
+        margin-left: 3px;
+      }
+    }
+
+    &_no {
+      color: var(--red);
+    }
   }
 
   &__percent {
