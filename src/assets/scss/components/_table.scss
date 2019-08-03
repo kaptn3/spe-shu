@@ -1,0 +1,107 @@
+.table {
+  font-size: 14px;
+  background-color: #fff;
+  border-collapse: collapse;
+  border-radius: 8px;
+  width: 100%;
+
+  &__thead {
+    color: var(--gray-text);
+    text-align: left;
+    font-weight: 400;
+
+    th {
+      padding: 19px 8px;
+      border-bottom: 1px solid #E4E4E4;
+    }
+  }
+
+  &__thead-reload {
+    visibility: hidden;
+  }
+
+  &__row {
+    td {
+      padding: 14px 8px 13px;
+    }
+
+    td:first-child,
+    th:first-child {
+      padding-left: 25px;
+    }
+    
+    td:last-child,
+    th:last-child {
+      padding-right: 25px;
+    }
+  }
+
+  &__row:not(:last-child) {
+    td {
+      border-bottom: 1px solid #E4E4E4;
+    }
+  }
+
+  &__check {
+    width: 18px;
+  }
+
+  &__link {
+    width: 204px;
+  }
+
+  &__price {
+    width: 110px;
+  }
+
+  &__cashback {
+    width: 147px;
+  }
+
+  &__percent {
+    width: 131px;
+  }
+
+  &__coupon {
+    width: 137px;
+  }
+
+  &__term {
+    width: 193px;
+  }
+
+  &__status {
+    width: 154px;
+
+    &_done {
+      color: var(--green);
+      background-color: #dbf0d4;
+    }
+
+    &_error {
+      color: var(--red);
+      background-color: #f8d1d1;
+    }
+
+    &_done,
+    &_error {
+      width: 100%;
+      display: block;
+      border-radius: 100px;
+      padding: 6px;
+      text-align: center;
+    }
+  }
+
+  &__reload {
+    width: 16px;
+  }
+
+  &__reload-btn {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: url(/assets/img/icons/reload.svg) no-repeat center;
+    background-size: contain;
+  }
+}
