@@ -1,53 +1,74 @@
-var gulp = require("gulp"),
-    sass = require("gulp-sass"),
-    postcss = require("gulp-postcss"),
-    autoprefixer = require("autoprefixer"),
-    cssnano = require("cssnano"),
-    sourcemaps = require("gulp-sourcemaps"),
-    browserSync = require("browser-sync").create();
+const { src, dest, series, watch } = require('gulp');
 
-var paths = {
-  styles: {
-    src: "src/assets/scss/**/*.scss",
-    dest: "src/assets/css"
+const del = require('del'), 
+      sass = require('gulp-sass'),
+      postcss = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
+      cssnano = require('cssnano'),
+      sourcemaps = require('gulp-sourcemaps'),
+      babel = require('gulp-babel'),
+      browserSync = require('browser-sync').create();
+
+const paths = {
+  dist: 'dist',
+  css: {
+    src: 'src/assets/scss/**/*.scss',
+    dest: 'dist/assets/css'
+  },
+  js: {
+    src: 'src/assets/js/*.js',
+    dest: 'dist/assets/js'
+  },
+  img: {
+    src: 'src/assets/img/**/*',
+    dest: 'dist/assets/img'
+  },
+  html: {
+    src: 'src/*.html',
+    dest: 'dist'
   }
 };
 
-function style() {
-  return gulp
-    .src(paths.styles.src)
-    // Initialize sourcemaps before compilation starts
+function clean() {
+  return del(paths.dist);
+}
+
+function css() {
+  return src(paths.css.src)
     .pipe(sourcemaps.init())
     .pipe(sass())
-    .on("error", sass.logError)
-    // Use postcss with autoprefixer and compress the compiled file using cssnano
+    .on('error', sass.logError)
     .pipe(postcss([autoprefixer(), cssnano()]))
-    // Now add/write the sourcemaps
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.styles.dest))
-    // Add browsersync stream pipe after compilation
+    .pipe(dest(paths.css.dest))
     .pipe(browserSync.stream());
 }
 
-function reload() {
-    browserSync.reload();
+function javascript() {
+  return src(paths.js.src)
+  .pipe(babel())
+  .pipe(dest(paths.js.dest));
 }
 
-function watch() {
-  browserSync.init({
-    server: {
-      baseDir: "./src"
-    },
-    tunnel: true
-  });
-  gulp.watch(paths.styles.src, style);
-  gulp.watch("src/*.html").on('change', browserSync.reload);
+function html() {
+  return src(paths.html.src)
+  .pipe(dest(paths.html.dest));
 }
 
-exports.watch = watch
+function img() {
+  return src(paths.img.src)
+  .pipe(dest(paths.img.dest));
+}
 
-exports.style = style;
+exports.clean = clean;
+exports.css = css;
+exports.javascript = javascript;
+exports.html = html;
+exports.img = img;
 
-var build = gulp.parallel(style, watch);
+exports.build = series(clean, html, img, css, javascript);
 
-gulp.task('default', build);
+exports.default = function() {
+  watch('src/assets/scss/**/*.scss', css);
+  watch('src/assets/js/*.js', series(clean, html, img, css, javascript));
+};
