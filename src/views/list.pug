@@ -4,6 +4,10 @@ body
   .app
     include includes/header.pug
     .container.app__main
+      .process-top
+        span.h1 Найдено ссылок: 
+          span.process-top__count 145
+        span.process-top__percent.process-top__percent_done Обработано 100%
       include includes/table.pug
     include includes/footer.pug
     button.download-btn
