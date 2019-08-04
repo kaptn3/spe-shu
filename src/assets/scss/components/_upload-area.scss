@@ -11,11 +11,6 @@
   padding: 70px 20px;
 
   &__icon {
-    width: 100%;
-    height: 122px;
-    display: inline-block;
-    background: url(../img/excel.svg) center no-repeat;
-    background-size: contain;
     margin-bottom: 36px;
   }
 
@@ -40,6 +35,10 @@
     background-position: center;
     vertical-align: middle;
     margin-right: 19px;
+
+    &_error {
+      margin-right: 52px;
+    }
   }
 
   &__input-file {
