@@ -6,6 +6,7 @@ form.upload-form(v-if="status === 'waiting'")
     img.upload-area__icon(src="/assets/img/upload-error.svg", alt="Excel icon")
     span.upload-area__hint Товары не найдены
     label.button.upload-area__btn
-      i.upload-area__btn-icon.upload-area__btn-icon_error
-      | Загрузить новый файл
+      span
+        i.upload-area__btn-icon.upload-area__btn-icon_error
+        | Загрузить новый файл
       input.upload-area__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")

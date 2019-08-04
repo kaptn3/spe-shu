@@ -12,7 +12,8 @@ form.form(v-cloak)
         span {{ error[1] }}
         | Ошибка
       button.form__visibility-btn(:class="{ 'form__visibility-btn_show': type === 'text' }", type="button", @click="toggleShow")
-    button.button.form__btn(type="submit") Войти
+    button.button.form__btn(type="submit")
+      span Войти
     small.form__small У вас нет аккаунта? 
       a(href="#") Зарегистрироваться
   a.form__forget(href="#") Забыли пароль?

@@ -1,14 +1,46 @@
 .button {
   border-radius: 8px;
-  background: linear-gradient(116.13deg, #45D53A 0%, #24BD18 97.75%), #777;
+  background-image: var(--gradient);
   color: #fff;
   width: 100%;
   max-width: 330px;
   font-size: 17px;
   font-weight: 500;
   padding: 18px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  span {
+    z-index: 3;
+    position: relative;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--gradient-blue);
+    transition: opacity .2s ease-out;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      opacity: 1;
+    }
+  }
 
   &_blue {
-    background: var(--blue);
+    background-image: var(--gradient-blue);
+
+    &:after {
+      background-image: var(--gradient);
+    }
   }
 }
