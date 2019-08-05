@@ -6,6 +6,11 @@
   background-size: contain;
   animation: 1s round linear infinite;
   margin: auto;
+
+  &_small {
+    width: 29px;
+    height: 29px;
+  }
 }
 
 @keyframes round {
