@@ -7,6 +7,6 @@ form.upload-form(v-if="status === 'waiting'")
     span.upload-area__hint Выберите Excel файл
     label.button.upload-area__btn
       span
-        i.upload-area__btn-icon
+        i.button__icon.upload-area__btn-icon
         | Загрузить файл с компьютера
       input.upload-area__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")

@@ -16,6 +16,15 @@
     position: relative;
   }
 
+  &__icon {
+    vertical-align: middle;
+    margin-right: 14px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+  }
+
   &:after {
     position: absolute;
     content: '';

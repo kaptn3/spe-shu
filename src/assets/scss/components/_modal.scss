@@ -35,13 +35,9 @@
   }
 
   &__btn-download-icon {
-    display: inline-block;
     height: 16px;
     width: 13px;
-    background: url(/assets/img/icons/download.svg) no-repeat center;
-    background-size: contain;
-    margin-right: 24px;
-    vertical-align: middle;
+    background-image: url(/assets/img/icons/download.svg);
   }
 
   &__small {

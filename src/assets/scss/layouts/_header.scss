@@ -22,11 +22,30 @@
     color: var(--green);
     border: 2px solid var(--green);
     border-radius: 8px;
-    padding: 9px 20px 9px 38px;
-    background: url(../img/icons/plus.svg) no-repeat;
+    padding: 9px 20px;
     background-position: 13px 11px;
-    background-size: 12px;
     font-size: 14px;
+    transition: .2s color, .2s background-color;
+
+    svg {
+      margin-right: 13px;
+      vertical-align: initial;
+    }
+
+    path {
+      fill: var(--green);
+      transition: .2s fill;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background-color: var(--green);
+
+      path {
+        fill: #fff;
+      }
+    }
   }
 
   &__profile {
