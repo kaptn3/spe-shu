@@ -1,0 +1,28 @@
+header.header-landing
+  .container
+    nav.header-landing__nav
+      a.header__logo(href="/")
+        img(src="/assets/img/logotype-white.svg", alt="SpeShu logotype")
+      div
+        a(href="#").header-landing__sign-in
+          | Войти
+        a(href="#").header-landing__sign-up Зарегистрироваться
+    .header-landing__box
+      .header-landing__left
+        h1.header-landing__title Получайте кэшбэки за покупку товара на Taobao и Tmall от российско-китайского логистрического IT стартапа
+        p.header-landing__p Загрузите заказ в формате Excel и узнавайте какой
+          br
+          | размер кэшбэка можно получить с каждого товара
+        .header-landing__upload-box
+          label.button.upload-btn.header-landing__upload
+            span
+              i.button__icon.upload-btn__icon
+              | Загрузить файл
+            input.upload-btn__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")
+          i.header-landing__upload-arrow
+        .header-landing__companies
+          span При поддержке:
+          img(src="/assets/img/skolkovo.svg", alt="")
+          img(src="/assets/img/mail-ru.svg", alt="")
+      .header-landing__right
+        img(src="/assets/img/header-img.svg", alt="")

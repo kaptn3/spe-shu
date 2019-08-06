@@ -1,0 +1,97 @@
+.header-landing {
+  height: 100vh;
+  min-height: 692px;
+  background-image: url(/assets/img/header-bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  &__nav {
+    display: flex;
+    padding: 34px 0;
+    justify-content: space-between;
+  }
+
+  &__sign-in,
+  &__sign-up {
+    color: #fff;
+    min-width: 145px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 8px;
+  }
+
+  &__sign-in {
+    background: linear-gradient(353.8deg, #FBAD18 11.27%, #FF4F0D 91.6%), linear-gradient(106.79deg, #45D53A 0%, #24BD18 97.75%);
+    padding: 11px 0;
+    margin-right: 28px;
+  }
+
+  &__sign-up {
+    padding: 9px 13px;
+    border: 2px solid #fff;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.4em;
+    margin-top: 65px;
+    margin-bottom: 47px;
+  }
+
+  &__p {
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+
+  &__left {
+    width: 65%;
+    z-index: 2;
+  }
+
+  &__right {
+    width: 35%;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      width: 550px;
+    }
+  }
+
+  &__upload {
+    margin-bottom: 67px;
+  }
+
+  &__upload-box {
+    position: relative;
+    max-width: 370px;
+  }
+
+  &__upload-arrow {
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url(/assets/img/arrow.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    top: -15px;
+    right: 0;
+  }
+
+  &__companies {
+    * {
+      margin-right: 16px;
+    }
+  }
+}
