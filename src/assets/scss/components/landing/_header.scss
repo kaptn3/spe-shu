@@ -39,9 +39,6 @@
   }
 
   &__title {
-    font-size: 36px;
-    font-weight: 500;
-    line-height: 1.4em;
     margin-top: 65px;
     margin-bottom: 47px;
   }
@@ -52,12 +49,12 @@
   }
 
   &__left {
-    width: 65%;
+    width: 58%;
     z-index: 2;
   }
 
   &__right {
-    width: 35%;
+    width: 42%;
     position: relative;
 
     img {
@@ -65,7 +62,6 @@
       top: 0;
       right: 0;
       z-index: 1;
-      width: 550px;
     }
   }
 
