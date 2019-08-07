@@ -9,13 +9,18 @@
   }
 
   &__get-code {
-    background-color: var(--bg);
     border-radius: 8px;
     margin-left: 10px;
-    color: var(--blue);
     width: 140px;
     flex-shrink: 0;
     margin-bottom: 16px;
+    background: var(--gradient-blue);
+    color: #fff;
+
+    &:disabled {
+      background: var(--bg);
+      color: var(--blue);
+    }
   }
 
   &__label {
@@ -48,6 +53,18 @@
     line-height: 24px;
     padding: 16px 20px;
     outline: none;
+
+    &_error {
+      background-color: rgba($color: #FD1010, $alpha: .2);
+      color: var(--red);
+    }
+
+    &_error-text {
+      color: var(--red);
+      position: absolute;
+      right: 20px;
+      top: 18px;
+    }
 
      &::placeholder {
        color: #B3A8CD;
