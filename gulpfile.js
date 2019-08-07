@@ -71,7 +71,7 @@ function watcher() {
   watch('src/assets/scss/**/*.scss', css);
   watch('src/assets/js/*.js', javascript);
   watch('src/views/**/*.pug', html);
-  watch('src/img/**/*', img);
+  watch('src/assets/img/**/*', img);
 };
 
 exports.clean = clean;
