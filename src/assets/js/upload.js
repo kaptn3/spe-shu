@@ -1,5 +1,5 @@
 var upload = new Vue({
-  el: '.upload__main',
+  el: '#upload',
   data() {
     return {
       status: 'waiting',

@@ -17,5 +17,7 @@
   &__hint {
     color: var(--gray-text);
     margin-bottom: 29px;
+    max-width: 390px;
+    line-height: 24px;
   }
 }

@@ -2,11 +2,6 @@ form.upload-form(v-if="status === 'waiting'")
   h1.h1.upload-form__heading Перетащите файл в выделенную область или кликнете 
     span.upload-form__upload загрузить файл
       input.upload-form__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")
-  .upload-area
-    img.upload-area__icon(src="/assets/img/excel.svg", alt="Excel icon")
-    span.upload-area__hint Выберите Excel файл
-    label.button.upload-btn
-      span
-        i.button__icon.upload-btn__icon
-        | Загрузить файл с компьютера
-      input.upload-btn__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")
+  - var hint = 'Выберите Excel файл'
+  - var btn = 'Загрузить файл с компьютера'
+  include upload-area.pug
