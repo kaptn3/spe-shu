@@ -84,4 +84,4 @@ exports.watcher = watcher;
 
 exports.build = series(clean, img, css, javascript, html);
 
-exports.default = series(watcher);
+exports.default = series(clean, img, css, javascript, html, watcher);
