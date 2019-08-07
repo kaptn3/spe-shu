@@ -29,3 +29,11 @@
     }
   }
 }
+
+@media screen and (max-width: 575px) {
+  .check {
+    &__text {
+      font-size: 12px;
+    }
+  }
+}

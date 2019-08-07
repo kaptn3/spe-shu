@@ -21,3 +21,11 @@
     line-height: 24px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .upload-area {
+    border-color: transparent;
+    padding-top: 6px;
+    padding-bottom: 0;
+  }
+}

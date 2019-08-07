@@ -18,3 +18,18 @@ h6 {
   font-weight: 500;
   line-height: 1.4em;
 }
+
+html {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+
+  .landing-title {
+    font-size: 22px;
+  }
+}

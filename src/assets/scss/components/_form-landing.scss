@@ -65,3 +65,18 @@
     max-width: 100%;
   }
 }
+
+@media screen and (max-width: 991px) {
+  .form-landing {
+    width: 100%;
+    padding: 30px 25px 26px 25px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .form-landing {
+    &__input {
+      padding: 11px 17px;
+    }
+  }
+}
