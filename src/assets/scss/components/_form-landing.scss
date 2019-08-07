@@ -95,5 +95,9 @@
     &__input {
       padding: 11px 17px;
     }
+
+    &__label_volume::after {
+      top: 16px;
+    }
   }
 }
