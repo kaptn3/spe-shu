@@ -1,0 +1,35 @@
+.advices {
+  &__title {
+    margin: 45px 0;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 52px;
+  }
+
+  &__short {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-top: 26px;
+    margin-bottom: 14px;
+  }
+
+  &__description {
+    color: var(--gray-text);
+    line-height: 1.5em;
+    font-size: 13px;
+    margin-top: auto;
+  }
+}
