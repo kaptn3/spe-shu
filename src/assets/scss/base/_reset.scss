@@ -49,3 +49,10 @@ button {
 [v-cloak] {
   display: none;
 }
+
+.modal-open {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}

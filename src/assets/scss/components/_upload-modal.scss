@@ -1,0 +1,24 @@
+.upload-modal {
+  position: fixed;
+  z-index: 8;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  display: none;
+  padding: 40px;
+  background: rgba($color: #8C43A2, $alpha: .3);
+
+  &__box {
+    background: #fff;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 40px auto;
+    width: 100%;
+    max-width: 770px;
+    padding: 40px;
+    border-radius: 8px;
+  }
+}

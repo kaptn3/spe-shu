@@ -16,11 +16,8 @@ header.header-landing
           br
           | размер кэшбэка можно получить с каждого товара
         .header-landing__upload-box
-          label.button.upload-btn.header-landing__upload
-            span
-              i.button__icon.upload-btn__icon
-              | Загрузить файл
-            input.upload-btn__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")
+          button.button.upload-btn.header-landing__upload(onclick="openModal()")
+            span Загрузить файл
           i.header-landing__upload-arrow
         .header-landing__companies
           span При поддержке:
