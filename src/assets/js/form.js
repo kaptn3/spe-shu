@@ -5,41 +5,47 @@ var form = new Vue({
       type: 'password',
       login: '',
       password: '',
-      error: ['Логин не зарегистрирован', 'Проверьте данные']
+      errorLogin: '',
+      errorPassword: ''
     };
   },
   computed: {
     loginClass() {
       return {
         'form__input_fill': this.login.length > 6,
-        'form__input_error': this.error[0]
+        'form__input_error': this.errorLogin
       };
     },
     passwordClass() {
       return {
         'form__input_fill': this.password.length > 6,
-        'form__input_error': this.error[1]
+        'form__input_error': this.errorPassword
       };
-    },
+    }
   },
   methods: {
     toggleShow() {
       this.type = this.type === 'text' ? 'password' : 'text';
+    },
+    checkForm(e) {
+      e.preventDefault();
+      this.errorLogin = 'Ошибка логина';
+      this.errorPassword = 'Ошибка пароля';
     }
   },
   watch: {
     login() {
       if (this.login.length > 0) {
-        this.error[0] = '';
+        this.errorLogin = '';
       } else {
-        this.error[0] = 'Логин не зарегистрирован';
+        this.errorLogin = 'Логин не зарегистрирован';
       }
     },
     password() {
       if (this.password.length > 0) {
-        this.error[1] = '';
+        this.errorPassword = '';
       } else {
-        this.error[1] = 'Проверьте данные';
+        this.errorPassword = 'Проверьте данные';
       }
     }
   }
