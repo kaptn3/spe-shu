@@ -14,6 +14,7 @@ const signUp = new Vue({
       this.error = true;
     },
     getCode() {
+      this.sec = 45;
       this.interval = setInterval(() => {
         if (this.sec > 0) {
           this.sec -= 1;
