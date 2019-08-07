@@ -7,7 +7,6 @@
     padding-top: 22px;
     padding-bottom: 22px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -29,6 +28,7 @@
 
   &__support {
     color: var(--blue);
+    margin-left: auto;
   }
 
   &__support-icon {
@@ -45,8 +45,11 @@
 
 @media screen and (max-width: 767px) {
   .footer {
-    &__right {
-      margin-bottom: 20px;
+    &__menu {
+      order: 1;
+      margin-top: 16px;
+      display: block;
+      line-height: 2em;
     }
   }
 }
