@@ -1,0 +1,25 @@
+form.form-landing
+  label.form-landing__label
+    input.form-landing__input(type="text", name="first-name", placeholder="Имя", required)
+  .form-landing__input-group
+    label.form-landing__label
+      input.form-landing__input(type="phone", name="phone", placeholder="Телефон", required)
+    button.form-landing__get-code(type="button") Получить код
+  label.form-landing__label
+    input.form-landing__input(type="text", name="code", placeholder="Код из СМС", required)
+  span.form-landing__new-code-text Новый код можно будет запросить через: 
+    span.form-landing__time 25
+    | сек
+  label.form-landing__label.form-landing__label_volume
+    input.form-landing__input(type="text", name="volume", placeholder="Текущий объем выкупа", required) 
+  label.form-landing__label
+    input.form-landing__input(type="text", name="clients-count", placeholder="Количество клиентов", required) 
+  label.form-landing__label
+    input.form-landing__input(type="text", name="city", placeholder="Ваш город", required) 
+  label.check.form-landing__label
+    input.check__input(type="checkbox", name="policy", checked, required)
+    span.check__box
+    span.check__text Согласен с 
+      a(href="#") политикой конфиденциальности
+  button.button.button_blue.form-landing__btn(type="submit") Оставить заявку
+

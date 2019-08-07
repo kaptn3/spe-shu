@@ -1,0 +1,67 @@
+.form-landing {
+  background-color: #fff;
+  width: 472px;
+  border-radius: 8px;
+  padding: 42px 46px;
+
+  &__input-group {
+    display: flex;
+  }
+
+  &__get-code {
+    background-color: var(--bg);
+    border-radius: 8px;
+    margin-left: 10px;
+    color: var(--blue);
+    width: 140px;
+    flex-shrink: 0;
+    margin-bottom: 16px;
+  }
+
+  &__label {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 16px;
+    position: relative;
+
+    &_volume {
+      input {
+        padding-right: 42px;
+      }
+    
+      &::after {
+        content: '₽';
+        color: #B3A8CD;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--bg);
+    font-size: 15px;
+    line-height: 24px;
+    padding: 16px 20px;
+    outline: none;
+
+     &::placeholder {
+       color: #B3A8CD;
+     }
+  }
+
+  &__new-code-text {
+    color: #B3A8CD;
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+
+  &__btn {
+    max-width: 100%;
+  }
+}

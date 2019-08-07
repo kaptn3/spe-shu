@@ -9,8 +9,10 @@
         './layouts/header',
         './layouts/footer';
 
-@import './layouts/work-process',
-        './layouts/advices';
+@import './layouts/header-landing',
+        './layouts/work-process',
+        './layouts/advices',
+        './layouts/upload-landing';
 
 @import './components/logo',
         './components/form',
@@ -25,6 +27,5 @@
         './components/download',
         './components/process-top',
         './components/overlay',
-        './components/modal';
-
-@import './components/landing/header';
+        './components/modal',
+        './components/form-landing';
