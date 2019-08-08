@@ -4,8 +4,8 @@
       input.form-landing__input(type="text", name="first-name", placeholder="Имя", required)
     .form-landing__input-group
       label.form-landing__label
-        input.form-landing__input(type="tel", name="phone", placeholder="Телефон", @input="inputPhone", required)
-      button.form-landing__get-code(type="button", @click="getCode", :disabled="phoneLength !== 19") Получить код
+        input.form-landing__input(type="tel", name="phone", placeholder="Телефон", @click="inputPhone", @input="inputPhone", @focus="inputPhone", @blur="inputPhone", required)
+      button.form-landing__get-code(type="button", @click="getCode", :disabled="phoneLength < 18") Получить код
     label.form-landing__label
       input.form-landing__input(type="text", name="code", placeholder="Код из СМС", :class="{ 'form-landing__input_error': error }" required)
       span.form-landing__input_error-text(v-if="error") Неправильный код
