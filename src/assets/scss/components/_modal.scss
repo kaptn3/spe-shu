@@ -1,14 +1,13 @@
 .modal {
   position: fixed;
   width: 422px;
-  height: 422px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
   background-color: #fff;
   border-radius: 8px;
-  padding: 0 46px;
+  padding: 40px 46px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -46,6 +45,34 @@
 
     a {
       color: var(--blue);
+    }
+  }
+
+  &__sign-in {
+    margin-bottom: 14px;
+  }
+
+  &__sign-up {
+    background: var(--gradient-blue);
+    color: var(--blue);
+
+    &::after {
+      background: #fff;
+      opacity: 1;
+      height: 51px;
+      top: 2px;
+      width: 326px;
+      left: 2.5px;
+      border-radius: 8px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+
+      &::after {
+        background: var(--gradient-blue);
+      }
     }
   }
 }

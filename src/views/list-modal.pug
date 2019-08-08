@@ -2,4 +2,14 @@ include list.pug
 
 .overlay
 
-include includes/modal.pug
+.modal
+  button.modal__close
+  img(src="/assets/img/success.svg", alt="Success image")
+  h2.h1.modal__heading Обработано 140/145 ссылок
+  span.modal__text Чтобы получить кешбек, нужно войти или зарегистрироваться
+  button.button.button_blue.modal__sign-in
+    span Войти в личный кабинет
+  button.button.modal__sign-up
+    span Зарегистрироваться
+  small.modal__small Возникли проблемы? 
+    a(href="#") Обратитесь в поддержку

@@ -4,6 +4,9 @@
         './base/fonts',
         './base/type';
 
+@import './components/button',
+        './components/overlay';
+
 @import './layouts/container',
         './layouts/app',
         './layouts/header',
@@ -16,7 +19,6 @@
 
 @import './components/logo',
         './components/form',
-        './components/button',
         './components/upload-form',
         './components/upload-btn',
         './components/upload-area',
@@ -26,7 +28,6 @@
         './components/table',
         './components/download',
         './components/process-top',
-        './components/overlay',
         './components/modal',
         './components/form-landing',
         './components/upload-modal';
