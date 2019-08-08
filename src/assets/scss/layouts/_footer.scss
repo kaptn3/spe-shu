@@ -29,6 +29,11 @@
   &__support {
     color: var(--blue);
     margin-left: auto;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   &__support-icon {

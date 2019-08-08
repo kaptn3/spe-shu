@@ -17,6 +17,11 @@
 
   a {
     color: var(--blue);
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 
   &__thead {
