@@ -1,5 +1,5 @@
 var upload = new Vue({
-  el: '#upload',
+  el: '#upload2',
   data() {
     return {
       status: 'waiting',
@@ -7,7 +7,7 @@ var upload = new Vue({
     };
   },
   mounted() {
-    const uploadArea = document.querySelector('.upload-area');
+    const uploadArea = document.querySelectorAll('.upload-area')[1];
     uploadArea.addEventListener('dragover', (e) => {
       this.dragOverHandler(e);
     });
@@ -40,4 +40,3 @@ var upload = new Vue({
     }
   }
 });
-
