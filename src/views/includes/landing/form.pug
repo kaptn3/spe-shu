@@ -1,4 +1,4 @@
-#sign-up 
+#sign-up(v-cloak)
   form.upload-landing__form.form-landing(@submit="checkForm")
     label.form-landing__label
       input.form-landing__input(type="text", name="first-name", placeholder="Имя", required)
@@ -9,7 +9,7 @@
     label.form-landing__label
       input.form-landing__input(type="text", name="code", placeholder="Код из СМС", :class="{ 'form-landing__input_error': error }" required)
       span.form-landing__input_error-text(v-if="error") Неправильный код
-    span.form-landing__new-code-text Новый код можно будет запросить через: 
+    span.form-landing__new-code-text Новый код можно запросить через: 
       span.form-landing__time {{ sec }} 
       | сек
     label.form-landing__label.form-landing__label_volume

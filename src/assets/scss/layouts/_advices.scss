@@ -23,7 +23,7 @@
 
   &__short {
     font-size: 15px;
-    line-height: 1.5em;
+    line-height: 1.4em;
     margin-top: 26px;
     margin-bottom: 14px;
   }
@@ -55,6 +55,15 @@
 
     &__description {
       font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .advices {
+    &__title {
+      margin-top: 20px;
+      margin-bottom: 30px;
     }
   }
 }

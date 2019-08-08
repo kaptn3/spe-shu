@@ -1,5 +1,5 @@
 <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.3">
+<g opacity="1">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M19 0.783323H3C1.9 0.783323 1.01 1.5952 1.01 2.58749L1 13.4125C1 14.4048 1.9 15.2167 3 15.2167H19C20.1 15.2167 21 14.4048 21 13.4125V2.58749C21 1.5952 20.1 0.783323 19 0.783323ZM3 4.39166L11 8.90208L19 4.39166V13.4125H3V4.39166ZM3 2.58749L11 7.09791L19 2.58749H3Z" fill="black"/>
 <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="1" y="0" width="20" height="16">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M19 0.783323H3C1.9 0.783323 1.01 1.5952 1.01 2.58749L1 13.4125C1 14.4048 1.9 15.2167 3 15.2167H19C20.1 15.2167 21 14.4048 21 13.4125V2.58749C21 1.5952 20.1 0.783323 19 0.783323ZM3 4.39166L11 8.90208L19 4.39166V13.4125H3V4.39166ZM3 2.58749L11 7.09791L19 2.58749H3Z" fill="white"/>

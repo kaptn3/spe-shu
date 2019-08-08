@@ -23,9 +23,15 @@
   &__text {
     vertical-align: middle;
     margin-left: 14px;
+    font-size: 14px;
 
     a {
       color: var(--blue);
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
   }
 }

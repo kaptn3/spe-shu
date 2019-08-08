@@ -3,10 +3,11 @@ header.header-landing
     nav.header-landing__nav
       a.header-landing__logo(href="/")
         img(src="/assets/img/logotype-white.svg", alt="SpeShu logotype")
-      div
-        a(href="/").header-landing__sign-in
-          | Войти
-        a(href="/index-qr").header-landing__sign-up Зарегистрироваться
+      .header-landing__sign
+        a(href="/").button.button_blue.header-landing__sign-in
+          span Войти
+        a(href="/index-qr").button.button_blue.header-landing__sign-up
+          span Зарегистрироваться
     .header-landing__box
       .header-landing__left
         h1.landing-title.header-landing__title Получайте кэшбэки за покупку товара
@@ -27,5 +28,7 @@ header.header-landing
         img(src="/assets/img/header-img.svg", alt="")
         .header-landing__companies.header-landing__companies_mobile
           span При поддержке:
-          img(src="/assets/img/skolkovo.svg", alt="")
-          img(src="/assets/img/mail-ru.svg", alt="")
+          div
+            img(src="/assets/img/skolkovo.svg", alt="")
+          div
+            img(src="/assets/img/mail-ru.svg", alt="")

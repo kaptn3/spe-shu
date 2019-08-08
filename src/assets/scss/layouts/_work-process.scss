@@ -59,6 +59,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      background: var(--gradient-blue);
+    }
   }
 }
 

@@ -20,6 +20,12 @@
     margin-right: 2em;
   }
 
+  &__menu-item:hover,
+  &__menu-item:focus {
+    color: var(--blue);
+    text-decoration: underline;
+  }
+
   &__menu {
     display: flex;
     list-style: none;
@@ -33,6 +39,10 @@
     &:hover,
     &:focus {
       text-decoration: underline;
+
+      .footer__support-icon {
+        opacity: 1;
+      }
     }
   }
 
@@ -45,6 +55,8 @@
     display: inline-block;
     vertical-align: middle;
     margin: 0 0 2px 1em;
+    opacity: .3;
+    transition: .2s opacity;
   }
 }
 

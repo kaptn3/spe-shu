@@ -21,6 +21,11 @@
       background: var(--bg);
       color: var(--blue);
     }
+
+    &:hover,
+    &:focus {
+      background: linear-gradient(356.18deg, #FBAD18 11.27%, #FF4F0D 91.6%);
+    }
   }
 
   &__label {
@@ -53,6 +58,7 @@
     line-height: 24px;
     padding: 16px 20px;
     outline: none;
+    font-weight: 400;
 
     &_error {
       background-color: rgba($color: #FD1010, $alpha: .2);
@@ -63,7 +69,8 @@
       color: var(--red);
       position: absolute;
       right: 20px;
-      top: 18px;
+      top: 21px;
+      font-size: 13px;
     }
 
      &::placeholder {
@@ -94,6 +101,7 @@
   .form-landing {
     &__input {
       padding: 11px 17px;
+      font-size: 14px;
     }
 
     &__label_volume::after {
