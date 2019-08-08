@@ -9,6 +9,8 @@
   display: none;
   padding: 40px;
   background: rgba($color: #8C43A2, $alpha: .3);
+  opacity: 0;
+  transition: .3s opacity;
 
   &__box {
     background: #fff;
