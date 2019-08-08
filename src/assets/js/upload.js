@@ -9,16 +9,21 @@ var upload = new Vue({
   mounted() {
     const uploadArea = document.querySelector('.upload-area');
     uploadArea.addEventListener('dragover', (e) => {
-      this.dragOverHandler(e);
+      this.dragOverHandler(e, uploadArea);
     });
 
     uploadArea.addEventListener('drop', (e) => {
       this.dropHandler(e);
     });
+
+    uploadArea.addEventListener('dragleave', () => {
+      uploadArea.style.borderColor = '#c8c0c7';
+    });
   },
   methods: {
-    dragOverHandler(e) {
+    dragOverHandler(e, uploadArea) {
       e.preventDefault();
+      uploadArea.style.borderColor = 'var(--blue)';
     },
     dropHandler(e) {
       e.preventDefault();
