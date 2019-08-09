@@ -1,0 +1,19 @@
+
+<div class="upload-modal">
+  <div class="upload-modal__box">
+    <button class="modal__close" onclick="closeModal()"></button>
+    <div id="upload-2">
+      <div v-if="status === 'waiting'">
+        <div class="upload-area"><img class="upload-area__icon" src="/assets/img/excel.svg" alt="Excel icon"/><span class="upload-area__hint"></span>
+          <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i> </span>
+            <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+          </label>
+        </div>
+      </div>
+      <div class="upload-box" v-if="status !== 'waiting'" v-cloak="v-cloak">
+        <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"/><span class="upload-box__text">Загрузка файла на сервер</span></div>
+        <div v-if="status === 'collect'" v-cloak="v-cloak"><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"/><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+      </div>
+    </div>
+  </div>
+</div>

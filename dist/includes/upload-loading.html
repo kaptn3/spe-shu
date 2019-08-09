@@ -1,0 +1,5 @@
+
+<div class="upload-box" v-if="status !== 'waiting'" v-cloak="v-cloak">
+  <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"/><span class="upload-box__text">Загрузка файла на сервер</span></div>
+  <div v-if="status === 'collect'" v-cloak="v-cloak"><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"/><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+</div>

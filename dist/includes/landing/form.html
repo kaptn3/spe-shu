@@ -1,0 +1,30 @@
+
+<div id="sign-up" v-cloak="v-cloak">
+  <form class="upload-landing__form form-landing" @submit="checkForm">
+    <label class="form-landing__label">
+      <input class="form-landing__input" type="text" name="first-name" placeholder="Имя" required="required"/>
+    </label>
+    <div class="form-landing__input-group">
+      <label class="form-landing__label">
+        <input class="form-landing__input" type="tel" name="phone" placeholder="Телефон" @click="inputPhone" @input="inputPhone" @focus="inputPhone" @blur="inputPhone" required="required"/>
+      </label>
+      <button class="form-landing__get-code" type="button" @click="getCode" :disabled="phoneLength &lt; 18">Получить код</button>
+    </div>
+    <label class="form-landing__label">
+      <input class="form-landing__input" type="number" name="code" placeholder="Код из СМС" :class="{ 'form-landing__input_error': error }" required="required"/><span class="form-landing__input_error-text" v-if="error">Неправильный код</span>
+    </label><span class="form-landing__new-code-text">Новый код можно запросить через: <span class="form-landing__time">{{ sec }} </span>сек</span>
+    <label class="form-landing__label form-landing__label_volume">
+      <input class="form-landing__input" type="number" name="volume" placeholder="Текущий объем выкупа" required="required"/>
+    </label>
+    <label class="form-landing__label">
+      <input class="form-landing__input" type="number" name="clients-count" placeholder="Количество клиентов" required="required"/>
+    </label>
+    <label class="form-landing__label">
+      <input class="form-landing__input" type="text" name="city" placeholder="Ваш город" required="required"/>
+    </label>
+    <label class="check form-landing__label">
+      <input class="check__input" type="checkbox" name="policy" checked="checked" required="required"/><span class="check__box"></span><span class="check__text">Согласен с <a href="#">политикой конфиденциальности</a></span>
+    </label>
+    <button class="button button_blue form-landing__btn" type="submit"><span>Оставить заявку</span></button>
+  </form>
+</div>

@@ -1,0 +1,30 @@
+
+<section class="upload-landing">
+  <div class="container">
+    <h2 class="landing-title upload-landing__title">Оставьте заявку на регистрацию или <span class="upload-form__upload">загрузите Excel-бланк
+        <input class="upload-form__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/></span></h2>
+    <div class="upload-landing__box">
+      <div class="upload-landing__form-qr">
+        <div class="form__box form__qr"><img class="form__qr-img" src="assets/img/qr.JPG" alt="QR Code"/>
+          <h1 class="h1 form__qr-heading">Для регистрации напишите администратору в WeChat</h1>
+          <button class="button button_blue"><span>Написать администратору</span></button><small class="form__small">Возникли проблемы? <a href="#">Обратитесь в поддержку</a></small>
+        </div>
+      </div>
+      <div class="upload-landing__right" id="upload" v-cloak="v-cloak">
+        <div class="upload-landing__area" v-if="status === 'waiting'">
+          <div class="upload-area"><img class="upload-area__icon" src="/assets/img/excel.svg" alt="Excel icon"/><span class="upload-area__hint">Загрузите заказ в формате Excel и узнайте какой размер кешбэка можно получить с каждого товара</span>
+            <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i>Выбрать Excel-бланк </span>
+              <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+            </label>
+          </div>
+        </div>
+        <div class="upload-landing__loading" v-if="status !== 'waiting'">
+          <div class="upload-box" v-if="status !== 'waiting'" v-cloak="v-cloak">
+            <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"/><span class="upload-box__text">Загрузка файла на сервер</span></div>
+            <div v-if="status === 'collect'" v-cloak="v-cloak"><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"/><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

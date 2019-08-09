@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Ошибка загрузки файла</title>
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="container header__box"><a class="header__logo" href="/"><img src="/assets/img/logotype.svg" alt="Logotype image"></a>
+        <button class="header__add-file">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.14286 0V5.14286H0V6.85714H5.14286V12H6.85714V6.85714H12V5.14286H6.85714V0H5.14286Z"></path>
+          </svg>Новый файл
+        </button>
+        <button class="header__profile"><img class="header__profile-photo" src="/assets/img/profile.svg" alt="Profile photo"><i class="header__profile-arrow"></i>
+          <div class="popup"><a>Настройки</a><a>Мои загрузки</a><a class="popup__out">Выйти<i class="popup__out-icon"></i></a></div>
+        </button>
+      </div>
+    </header>
+    <main class="container app__main" id="upload">
+      <form class="upload-form" v-if="status === 'waiting'">
+        <h1 class="h1 upload-form__heading">Перетащите файл в выделенную область или кликнете <span class="upload-form__upload">загрузить файл
+            <input class="upload-form__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"></span></h1>
+        <div class="upload-area"><img class="upload-area__icon" src="/assets/img/upload-error.svg" alt="Excel icon"><span class="upload-area__hint">Товары не найдены</span>
+          <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i>Загрузить новый файл</span>
+            <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+          </label>
+        </div>
+      </form>
+      <div class="upload-box" v-if="status !== 'waiting'" v-cloak>
+        <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"><span class="upload-box__text">Загрузка файла на сервер</span></div>
+        <div v-if="status === 'collect'" v-cloak><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container footer__box"><span class="footer__copyright">2019, SpeShu</span>
+        <ul class="footer__menu">
+          <li><a class="footer__menu-item" href="#">Политика конфиденциальности</a></li>
+          <li><a class="footer__menu-item" href="#">Пользовательское соглашение</a></li>
+        </ul><a class="footer__support" href="#">Поддержка<i class="footer__support-icon"></i></a>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="/assets/js/upload.js"></script>
+  <script src="/assets/js/header-profile.js"></script>
+</body>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <title>Главная</title>
+</head>
+<body class="landing">
+  <header class="header-landing">
+    <div class="container">
+      <nav class="header-landing__nav"><a class="header-landing__logo" href="/"><img src="/assets/img/logotype-white.svg" alt="SpeShu logotype"></a>
+        <div class="header-landing__sign"><a class="button button_blue header-landing__sign-in" href="/"><span>Войти</span></a><a class="button button_blue header-landing__sign-up" href="/index-qr"><span>Зарегистрироваться</span></a></div>
+      </nav>
+      <div class="header-landing__box">
+        <div class="header-landing__left">
+          <h1 class="landing-title header-landing__title">Получайте кэшбэки за покупку товара<br>на Taobao и Tmall от российско-китайского логистического IT стартапа</h1>
+          <p class="header-landing__p">Загрузите заказ в формате Excel и узнавайте какой<br>размер кэшбэка можно получить с каждого товара</p>
+          <div class="header-landing__upload-box">
+            <button class="button upload-btn header-landing__upload" onclick="openModal()"><span>Загрузить файл</span></button><i class="header-landing__upload-arrow"></i>
+          </div>
+          <div class="header-landing__companies"><span>При поддержке:</span><img src="/assets/img/skolkovo.svg" alt=""><img src="/assets/img/mail-ru.svg" alt=""></div>
+        </div>
+        <div class="header-landing__right"><img src="/assets/img/header-img.svg" alt="">
+          <div class="header-landing__companies header-landing__companies_mobile"><span>При поддержке:</span>
+            <div><img src="/assets/img/skolkovo.svg" alt=""></div>
+            <div><img src="/assets/img/mail-ru.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="container work-process">
+    <h2 class="landing-title work-process__title">Как это работает?</h2>
+    <ul class="work-process__list">
+      <li class="work-process__item"><span class="work-process__number">1</span>
+        <div class="work-process__img-box"><img src="/assets/img/step-1.svg" alt=""></div>
+        <p>Клиет отправляет вам заказ на покупку товаров в формате Excel</p>
+      </li>
+      <li class="work-process__item"><span class="work-process__number">2</span>
+        <div class="work-process__img-box"><img src="/assets/img/step-2.svg" alt=""></div>
+        <p>Вы загружаете заказ на наш сервис. Это займет всего пару минут </p>
+      </li>
+      <li class="work-process__item"><span class="work-process__number">3</span>
+        <div class="work-process__img-box"><img src="/assets/img/step-3.svg" alt=""></div>
+        <p>Мы анализируем товары и запоминаем данные о них, связывая с вашим аккаунтом</p>
+      </li>
+      <li class="work-process__item"><span class="work-process__number">4</span>
+        <div class="work-process__img-box"><img src="/assets/img/step-4.svg" alt=""></div>
+        <p>Вы скачиваете бланк с нашей системы и делаете покупку у продавцов</p>
+      </li>
+      <li class="work-process__item"><span class="work-process__number">5</span>
+        <div class="work-process__img-box"><img src="/assets/img/step-5.svg" alt=""></div>
+        <p>Каждое 10 число месяца мы выплаиваем кешбэк за купленные товары<br>в прошлом месяце на вашу российскую банковкую карту</p>
+      </li>
+      <li class="work-process__item">
+        <div class="work-process__img-box work-process__img-arrow"><img src="/assets/img/step-arrow.svg" alt=""></div><span class="work-process__want">Хочу получать кешбэк!</span>
+      </li>
+    </ul>
+  </section>
+  <section class="upload-landing">
+    <div class="container">
+      <h2 class="landing-title upload-landing__title">Оставьте заявку на регистрацию или <span class="upload-form__upload">загрузите Excel-бланк
+          <input class="upload-form__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"></span></h2>
+      <div class="upload-landing__box">
+        <div class="upload-landing__form-qr">
+          <div class="form__box form__qr"><img class="form__qr-img" src="assets/img/qr.JPG" alt="QR Code">
+            <h1 class="h1 form__qr-heading">Для регистрации напишите администратору в WeChat</h1>
+            <button class="button button_blue"><span>Написать администратору</span></button><small class="form__small">Возникли проблемы? <a href="#">Обратитесь в поддержку</a></small>
+          </div>
+        </div>
+        <div class="upload-landing__right" id="upload" v-cloak>
+          <div class="upload-landing__area" v-if="status === 'waiting'">
+            <div class="upload-area"><img class="upload-area__icon" src="/assets/img/excel.svg" alt="Excel icon"><span class="upload-area__hint">Загрузите заказ в формате Excel и узнайте какой размер кешбэка можно получить с каждого товара</span>
+              <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i>Выбрать Excel-бланк </span>
+                <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+              </label>
+            </div>
+          </div>
+          <div class="upload-landing__loading" v-if="status !== 'waiting'">
+            <div class="upload-box" v-if="status !== 'waiting'" v-cloak>
+              <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"><span class="upload-box__text">Загрузка файла на сервер</span></div>
+              <div v-if="status === 'collect'" v-cloak><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container advices">
+    <h2 class="landing-title advices__title">Советы от SpeShu</h2>
+    <ul class="advices__list">
+      <li class="advices__item"><img src="/assets/img/advice-1.svg" alt="">
+        <div>
+          <p class="advices__short">Отключите сторонние расширения, блокировщики рекламы, антивирус программы</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-2.svg" alt="">
+        <div>
+          <p class="advices__short">Ипользуйте одно устройство для работы с сервисом</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-3.svg" alt="">
+        <div>
+          <p class="advices__short">Совершайте покупку на сайте магазина в течение 2-х часов</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-4.svg" alt="">
+        <div>
+          <p class="advices__short">При оформлении заказа не переходите на сторонние сервисы</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-5.svg" alt="">
+        <div>
+          <p class="advices__short">Оформляйте ваш заказ как физическое лицо</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-6.svg" alt="">
+        <div>
+          <p class="advices__short">Покупайте товары в той же вкладке сайта магазина</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-7.svg" alt="">
+        <div>
+          <p class="advices__short">Очищайте корзину перед активацией кешбэка</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+      <li class="advices__item"><img src="/assets/img/advice-8.svg" alt="">
+        <div>
+          <p class="advices__short">Дождитесь завершения оплаты заказа, не закрывая страницу</p>
+          <p class="advices__description">Перед оформлением заказа отключите все сторонние сервисы блокироваки рекламы и другие расширения, котороые блокируют вирусы, рекламные ссылки.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <footer class="footer">
+    <div class="container footer__box"><span class="footer__copyright">2019, SpeShu</span>
+      <ul class="footer__menu">
+        <li><a class="footer__menu-item" href="#">Политика конфиденциальности</a></li>
+        <li><a class="footer__menu-item" href="#">Пользовательское соглашение</a></li>
+      </ul><a class="footer__support" href="#">Поддержка<i class="footer__support-icon"></i></a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <div class="upload-modal">
+    <div class="upload-modal__box">
+      <button class="modal__close" onclick="closeModal()"></button>
+      <div id="upload-2">
+        <div v-if="status === 'waiting'">
+          <div class="upload-area"><img class="upload-area__icon" src="/assets/img/excel.svg" alt="Excel icon"><span class="upload-area__hint">Загрузите заказ в формате Excel и узнайте какой размер кешбэка можно получить с каждого товара</span>
+            <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i>Выбрать Excel-бланк </span>
+              <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+            </label>
+          </div>
+        </div>
+        <div class="upload-box" v-if="status !== 'waiting'" v-cloak>
+          <div v-if="status === 'loading'"><img class="upload-box__image" src="/assets/img/loading.svg" alt="Loading image"><span class="upload-box__text">Загрузка файла на сервер</span></div>
+          <div v-if="status === 'collect'" v-cloak><img class="upload-box__image" src="/assets/img/collecting.svg" alt="Collecting image"><span class="upload-box__text">Собираем данные о товарах из файла</span></div><i class="loading"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/assets/js/upload.js"></script>
+  <script src="/assets/js/upload-2.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="/assets/js/sign-up.js"></script>
+  <script src="/assets/js/upload-modal.js"></script>
+</body>

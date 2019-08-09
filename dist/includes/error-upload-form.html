@@ -1,0 +1,10 @@
+
+<form class="upload-form" v-if="status === 'waiting'">
+  <h1 class="h1 upload-form__heading">Перетащите файл в выделенную область или кликнете <span class="upload-form__upload">загрузить файл
+      <input class="upload-form__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/></span></h1>
+  <div class="upload-area"><img class="upload-area__icon" src="/assets/img/upload-error.svg" alt="Excel icon"/><span class="upload-area__hint">Товары не найдены</span>
+    <label class="button upload-btn"><span><i class="button__icon upload-btn__icon"></i>Загрузить новый файл</span>
+      <input class="upload-btn__input-file" @change="changeFile" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+    </label>
+  </div>
+</form>
