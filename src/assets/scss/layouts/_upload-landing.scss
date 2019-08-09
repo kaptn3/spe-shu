@@ -36,6 +36,13 @@
     border: 3px dotted #c8c0c7;
     border-radius: 20px;
   }
+
+  &__form-qr {
+    .form__qr {
+      flex-shrink: 1;
+      margin-right: 30px;
+    }
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -46,6 +53,13 @@
 
     &__box {
       display: block;
+    }
+    
+    &__form-qr {
+      .form__qr {
+        width: 100%;
+        margin-bottom: 10px;
+      }
     }
   }
 }

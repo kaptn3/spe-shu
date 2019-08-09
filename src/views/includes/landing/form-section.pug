@@ -4,7 +4,8 @@ section.upload-landing
       span.upload-form__upload загрузите Excel-бланк
         input.upload-form__input-file(@change="changeFile" type="file", accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel")
     .upload-landing__box
-      include form.pug
+      .upload-landing__form-qr
+        include ../form-qr.pug
       - var hint = 'Загрузите заказ в формате Excel и узнайте какой размер кешбэка можно получить с каждого товара'
       - var btn = 'Выбрать Excel-бланк'
       #upload.upload-landing__right(v-cloak)
